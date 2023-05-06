@@ -2,8 +2,10 @@ import { Wrapper } from 'components/App.styled';
 import { Button, Form, Input } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { loginThunk, userThunk } from 'redux/auth/thunk';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const Login = () => {
   const navigate = useNavigate();
 
@@ -22,12 +24,13 @@ export const Login = () => {
         navigate('/contacts');
       })
       .catch(error => {
-        alert('Enter correct data!');
+        toast('User not found!');
       });
   };
 
   return (
     <Wrapper>
+      <ToastContainer />
       <Form onSubmit={handleSumbit}>
         <div>
           <label htmlFor="exampleInputEnail1">Email</label>

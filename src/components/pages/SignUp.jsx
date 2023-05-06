@@ -2,8 +2,10 @@ import { Wrapper } from 'components/App.styled';
 import { Button, Form, Input } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { signUp } from 'services/auth';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -21,11 +23,12 @@ export const SignUp = () => {
         navigate('/contacts');
       })
       .catch(error => {
-        alert('Enter correct data!');
+        toast('User with this email already exist!');
       });
   };
   return (
     <Wrapper>
+      <ToastContainer />
       <Form onSubmit={handleSumbit}>
         <div>
           <label htmlFor="exampleInputName1">Name</label>
