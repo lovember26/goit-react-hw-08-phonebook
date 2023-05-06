@@ -19,6 +19,9 @@ export const SignUp = () => {
       .unwrap()
       .then(() => {
         navigate('/contacts');
+      })
+      .catch(error => {
+        alert('Enter correct data!');
       });
   };
   return (

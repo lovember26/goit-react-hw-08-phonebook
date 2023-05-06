@@ -20,6 +20,9 @@ export const Login = () => {
       .then(() => {
         dispatch(userThunk());
         navigate('/contacts');
+      })
+      .catch(error => {
+        alert('Enter correct data!');
       });
   };
 
