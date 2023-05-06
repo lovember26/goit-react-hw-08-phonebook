@@ -1,12 +1,10 @@
 import { Wrapper } from 'components/App.styled';
 import { Button, Form, Input } from 'components/ContactForm/ContactForm.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { loginThunk, userThunk } from 'redux/auth/thunk';
 
 export const Login = () => {
-  const isAuth = useSelector(state => state.auth.token);
-
   const navigate = useNavigate();
 
   const dispatch = useDispatch();

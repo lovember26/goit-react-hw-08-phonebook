@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Container, Header, Logo, Name, StyledNavLink } from './Layout.styled';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { logOut } from 'redux/auth/authSlice';
@@ -8,7 +8,7 @@ import { delToken } from 'services/auth';
 
 const Layout = () => {
   const user = useSelector(state => state.auth.user);
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   //   const { token } = useSelector(state => state.token);
   //   useEffect(() => dispatch(userThunk()), [token]);

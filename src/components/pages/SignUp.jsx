@@ -1,7 +1,7 @@
 import { Wrapper } from 'components/App.styled';
 import { Button, Form, Input } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { signUp } from 'services/auth';
 
 export const SignUp = () => {
